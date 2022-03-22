@@ -1,4 +1,8 @@
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 namespace Learning\StoreLocator\Block;
 
@@ -7,7 +11,6 @@ use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\Api\SearchCriteriaBuilder;
 use Learning\StoreLocator\Api\LocationRepositoryInterface;
-
 
 class Data extends \Magento\Framework\View\Element\Template
 {
@@ -34,6 +37,11 @@ class Data extends \Magento\Framework\View\Element\Template
         parent::__construct($context, $data);
     }
 
+    /**
+     * Gets data from database in array
+     *
+     * @return \Learning\StoreLocator\Api\Data\LocationInterface[]
+     */
     public function getCollection()
     {
         $location = $this->locationRepository->getList($this->searchCreteriaBuilder->create());

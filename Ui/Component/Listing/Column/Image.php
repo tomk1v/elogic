@@ -1,4 +1,9 @@
 <?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Learning\StoreLocator\Ui\Component\Listing\Column;
 
 use Magento\Framework\UrlInterface;

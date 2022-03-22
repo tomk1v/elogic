@@ -1,4 +1,10 @@
 <?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="Learning\StoreLocator\Api\Data\LocationSearchResultsInterface" type="Magento\Framework\Api\SearchResults" />
     <preference for="Learning\StoreLocator\Api\Data\LocationInterface" type="Learning\StoreLocator\Model\Location" />
@@ -36,6 +42,7 @@
         </arguments>
     </type>
 
+    <!--Image Uploader-->
     <virtualType name="Learning\StoreLocator\ReferenceImageUpload" type="Learning\StoreLocator\Model\ImageUploader">
         <arguments>
             <argument name="baseTmpPath" xsi:type="string">storelocator/tmp/image</argument>
@@ -48,7 +55,6 @@
             </argument>
         </arguments>
     </virtualType>
-
     <type name="Learning\StoreLocator\Controller\Adminhtml\Index\Upload">
         <arguments>
             <argument name="imageUploader" xsi:type="object">Learning\StoreLocator\ReferenceImageUpload</argument>

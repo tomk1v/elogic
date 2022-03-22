@@ -1,4 +1,8 @@
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 namespace Learning\StoreLocator\Controller\Adminhtml\Index;
 
@@ -70,6 +74,7 @@ class Save extends Action
             $location = $this->locationFactory->create();
         }
 
+        //logic for saving name of image
         if (isset($data['image'][0]['name']) && isset($data['image'][0]['tmp_name'])) {
             $data['image_path'] = $data['image'][0]['name'];
             $this->imageUploader->moveFileFromTmp($data['image_path']);
