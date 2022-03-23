@@ -1,8 +1,13 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
+ * Store Locator
+ * XML defines preferences and injections
+ *
+ * @category  Learning
+ * @package   Learning\StoreLocator
+ * @author    Andrii Tomkiv <tomkivandrii18@gmail.com>
+ * @copyright 2022 Elogic
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
@@ -55,6 +60,7 @@
             </argument>
         </arguments>
     </virtualType>
+
     <type name="Learning\StoreLocator\Controller\Adminhtml\Index\Upload">
         <arguments>
             <argument name="imageUploader" xsi:type="object">Learning\StoreLocator\ReferenceImageUpload</argument>

@@ -1,7 +1,12 @@
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
+ * Store Locator
+ * Model class execute sql queries.
+ *
+ * @category  Learning
+ * @package   Learning\StoreLocator
+ * @author    Andrii Tomkiv <tomkivandrii18@gmail.com>
+ * @copyright 2022 Elogic
  */
 
 namespace Learning\StoreLocator\Model\ResourceModel;
@@ -11,6 +16,9 @@ use Learning\StoreLocator\Model\Location as Model;
 
 class Location extends AbstractDb
 {
+    /**
+     *  Name of database
+     */
     const MAIN_TABLE = 'learning_store_location';
 
     /**

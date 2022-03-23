@@ -1,9 +1,13 @@
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
+ * Store Locator
+ * Model class define logic for image upload
+ *
+ * @category  Learning
+ * @package   Learning\StoreLocator\Model
+ * @author    Andrii Tomkiv <tomkivandrii18@gmail.com>
+ * @copyright 2022 Elogic
  */
-
 namespace Learning\StoreLocator\Model;
 
 use Exception;
@@ -19,14 +23,19 @@ use Magento\MediaStorage\Model\File\UploaderFactory;
 use Magento\Store\Model\StoreManagerInterface;
 use Psr\Log\LoggerInterface;
 
-/**
- * Feature image uploader
- */
+
 class ImageUploader
 {
+    /**
+     * Path for temp image folder
+     */
     const IMAGE_TMP_PATH = 'storelocator/tmp/image';
 
+    /**
+     * Path for image folder
+     */
     const IMAGE_PATH = 'storelocator/image';
+
     /**
      * Core file storage database
      *
@@ -241,7 +250,6 @@ class ImageUploader
                 __('Something went wrong while saving the file(s).')
             );
         }
-
         return $imageName;
     }
 
@@ -296,7 +304,6 @@ class ImageUploader
                 );
             }
         }
-
         return $result;
     }
 }

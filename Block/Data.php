@@ -1,7 +1,12 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Store Locator
+ * Block is used for .phtml files where you can fetch data for frontend
+ *
+ * @category  Learning
+ * @package   Learning\StoreLocator
+ * @author    Andrii Tomkiv <tomkivandrii18@gmail.com>
+ * @copyright 2022 Elogic
  */
 
 namespace Learning\StoreLocator\Block;
@@ -14,20 +19,39 @@ use Learning\StoreLocator\Api\LocationRepositoryInterface;
 
 class Data extends \Magento\Framework\View\Element\Template
 {
+    /**
+     * Path for folder where images stored
+     */
     const IMAGE_PATH = '/media/storelocator/image';
 
+    /**
+     * @var Context
+     */
     protected $context;
 
-    private $searchCreteriaBuilder;
+    /**
+     * @var SearchCriteriaBuilder
+     */
+    private SearchCriteriaBuilder $searchCreteriaBuilder;
 
+    /**
+     * @var LocationRepositoryInterface
+     */
     protected $locationRepository;
 
+    /**
+     * @param Context $context
+     * @param LocationRepositoryInterface $locationRepository
+     * @param SearchCriteriaBuilder $searchCriteriaBuilder
+     * @param string $path
+     * @param array $data
+     */
     public function __construct(
         Context                                          $context,
         LocationRepositoryInterface                      $locationRepository,
-        \Magento\Framework\Api\SearchCriteriaBuilder     $searchCriteriaBuilder,
-                                                         $data = [],
-        $path = self::IMAGE_PATH
+        SearchCriteriaBuilder                            $searchCriteriaBuilder,
+        $path = self::IMAGE_PATH,
+        $data = []
     )
     {
         $this->context = $context;
@@ -72,6 +96,4 @@ class Data extends \Magento\Framework\View\Element\Template
     {
         return $this->context->getUrlBuilder()->getUrl($route, $params);
     }
-
-
 }

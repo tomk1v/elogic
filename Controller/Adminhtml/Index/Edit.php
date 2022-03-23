@@ -1,7 +1,12 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Store Locator
+ * Controller process URL-request for edit record button
+ *
+ * @category  Learning
+ * @package   Learning\StoreLocator
+ * @author    Andrii Tomkiv <tomkivandrii18@gmail.com>
+ * @copyright 2022 Elogic
  */
 
 namespace Learning\StoreLocator\Controller\Adminhtml\Index;
@@ -19,8 +24,6 @@ use Learning\StoreLocator\Model\LocationFactory;
 
 class Edit extends Action
 {
-    const ADMIN_RESOURCE = 'Learning_StoreLocator::admin_location_edit';
-
     /**
      * @var LocationRepositoryInterface
      */

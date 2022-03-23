@@ -1,7 +1,13 @@
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
+ * Store Locator
+ * Model class define the getIdentities() method which will return a unique id for the model.
+ * Also, logic for getters and setters.
+ *
+ * @category  Learning
+ * @package   Learning\StoreLocator
+ * @author    Andrii Tomkiv <tomkivandrii18@gmail.com>
+ * @copyright 2022 Elogic
  */
 
 namespace Learning\StoreLocator\Model;
@@ -58,6 +64,14 @@ class Location extends AbstractExtensibleModel implements LocationInterface
     public function getIdentities()
     {
         return [self::CACHE_TAG . '_' . $this->getId()];
+    }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->getData(self::KEY_ID);
     }
 
     /**
@@ -184,7 +198,7 @@ class Location extends AbstractExtensibleModel implements LocationInterface
      */
     public function getExtensionAttributes()
     {
-        return $this->getExtensionAttributes();
+        return $this->_getExtensionAttributes();
     }
 
     /**

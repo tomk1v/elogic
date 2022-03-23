@@ -1,7 +1,12 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Store Locator
+ * Controller display 'Store Locations' page in admin side.
+ *
+ * @category  Learning
+ * @package   Learning\StoreLocator
+ * @author    Andrii Tomkiv <tomkivandrii18@gmail.com>
+ * @copyright 2022 Elogic
  */
 
 namespace Learning\StoreLocator\Controller\Adminhtml\Index;
@@ -13,8 +18,6 @@ use Magento\Framework\View\Result\Page;
 
 class Index extends Action
 {
-    const ADMIN_RESOURCE = 'Learning_StoreLocator::admin_location_list';
-
     const MENU_ID = 'Learning_StoreLocator::admin_list';
 
     /**
@@ -48,5 +51,4 @@ class Index extends Action
 
         return $resultPage;
     }
-
 }

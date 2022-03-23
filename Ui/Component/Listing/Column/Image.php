@@ -1,7 +1,12 @@
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
+ * Store Locator
+ * Ui Component for displaying thumbnail in admin
+ *
+ * @category  Learning
+ * @package   Learning\StoreLocator
+ * @author    Andrii Tomkiv <tomkivandrii18@gmail.com>
+ * @copyright 2022 Elogic
  */
 
 namespace Learning\StoreLocator\Ui\Component\Listing\Column;
@@ -18,6 +23,7 @@ class Image extends Column
      * @var StoreManagerInterface
      */
     protected $storeManager;
+
     /**
      * @var UrlInterface
      */
@@ -45,6 +51,10 @@ class Image extends Column
         $this->url = $url;
     }
 
+    /**
+     * @param array $dataSource
+     * @return array
+     */
     public function prepareDataSource(array $dataSource)
     {
         $mediaUrl = $this->storeManager->getStore()->getBaseUrl(UrlInterface::URL_TYPE_MEDIA);
@@ -62,5 +72,4 @@ class Image extends Column
         }
         return $dataSource;
     }
-
 }

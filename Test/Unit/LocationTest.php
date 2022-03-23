@@ -1,7 +1,12 @@
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
+ * Store Locator
+ * Unit Test for testing getters and setter programmatically
+ *
+ * @category  Learning
+ * @package   Learning\StoreLocator
+ * @author    Andrii Tomkiv <tomkivandrii18@gmail.com>
+ * @copyright 2022 Elogic
  */
 
 namespace Learning\StoreLocator\Test\Unit\Model;
@@ -11,15 +16,23 @@ use Learning\StoreLocator\Model\Location;
 
 class LocationTest extends \PHPUnit\Framework\TestCase
 {
-    /** @var Location */
+    /**
+     * @var Location
+     */
     private $location;
 
+    /**
+     * Is called before running a test
+     */
     public function setUp(): void
     {
-        $objectManager = new ObjectManager($this);
-        $this->location = $objectManager->getObject(Location::class);
+        $this->objectManager = new ObjectManager($this);
+        $this->location = $this->objectManager->getObject(Location::class);
     }
 
+    /**
+     * The test of getters and setters
+     */
     public function testGettersAndSetters()
     {
         $name = 'name';
@@ -47,6 +60,4 @@ class LocationTest extends \PHPUnit\Framework\TestCase
         $this->location->setLatitude($latitude);
         $this->assertEquals($latitude, $this->location->getLatitude());
     }
-
-
 }

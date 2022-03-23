@@ -1,7 +1,12 @@
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
+ * Store Locator
+ * Ui Component for displaying drop down menu in admin
+ *
+ * @category  Learning
+ * @package   Learning\StoreLocator
+ * @author    Andrii Tomkiv <tomkivandrii18@gmail.com>
+ * @copyright 2022 Elogic
  */
 
 namespace Learning\StoreLocator\Ui\Component\Listing\Column;
@@ -19,7 +24,9 @@ class LocationActions extends Column
     const PATH_EDIT   = 'locations/index/edit';
     const PATH_DELETE = 'locations/index/delete';
 
-    /** @var UrlInterface */
+    /**
+     * @var UrlInterface
+     */
     protected $urlBuilder;
 
     /**

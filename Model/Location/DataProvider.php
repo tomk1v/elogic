@@ -1,7 +1,12 @@
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
+ * Store Locator
+ * Data Provider for displaying data in grid and form
+ *
+ * @category  Learning
+ * @package   Learning\StoreLocator
+ * @author    Andrii Tomkiv <tomkivandrii18@gmail.com>
+ * @copyright 2022 Elogic
  */
 
 namespace Learning\StoreLocator\Model\Location;
@@ -25,7 +30,9 @@ class DataProvider extends AbstractDataProvider
      */
     protected $loadedData;
 
-
+    /**
+     * @var StoreManagerInterface
+     */
     protected $storeManager;
 
     /**

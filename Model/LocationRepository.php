@@ -1,7 +1,12 @@
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
+ * Store Locator
+ * Model class define logic for LocationRepositoryInterface methods
+ *
+ * @category  Learning
+ * @package   Learning\StoreLocator
+ * @author    Andrii Tomkiv <tomkivandrii18@gmail.com>
+ * @copyright 2022 Elogic
  */
 
 namespace Learning\StoreLocator\Model;
@@ -156,10 +161,8 @@ class LocationRepository implements LocationRepositoryInterface
      */
     public function getList(SearchCriteriaInterface $searchCriteria)
     {
-        /** @var LocationSearchResultsInterface $searchResult */
         $searchResult = $this->searchResultFactory->create();
 
-        /** @var Collection $collection */
         $collection = $this->collectionFactory->create();
         $this->joinProcessor->process($collection, LocationInterface::class);
         $this->collectionProcessor->process($searchCriteria, $collection);
