@@ -27,7 +27,7 @@ interface LocationInterface extends ExtensibleDataInterface
     /**
      * @return int
      */
-    public function getId(): int;
+    public function getId();
 
     /**
      * @return string

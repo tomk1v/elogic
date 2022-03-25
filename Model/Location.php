@@ -69,7 +69,7 @@ class Location extends AbstractExtensibleModel implements LocationInterface
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->getData(self::KEY_ID);
     }
