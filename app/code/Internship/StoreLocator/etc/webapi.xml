@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Store Locator
+ * XML of defining Web API routes
+ *
+ * @category  Internship
+ * @package   Internship\StoreLocator
+ * @author    Andrii Tomkiv <tomkivandrii18@gmail.com>
+ * @copyright 2022 Elogic
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route method="GET" url="/V1/storelocator/getList">
+        <service class="Internship\StoreLocator\Api\LocationRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route method="GET" url="/V1/storelocator/getById/:locationId">
+        <service class="Internship\StoreLocator\Api\LocationRepositoryInterface" method="getById"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route method="DELETE" url="/V1/storelocator/deleteById/:locationId">
+        <service class="Internship\StoreLocator\Api\LocationRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+</routes>

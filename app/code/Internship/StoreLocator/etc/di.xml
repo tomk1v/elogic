@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Store Locator
+ * XML defines preferences and injections
+ *
+ * @category  Internship
+ * @package   Internship \StoreLocator
+ * @author    Andrii Tomkiv <tomkivandrii18@gmail.com>
+ * @copyright 2022 Elogic
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Internship\StoreLocator\Api\Data\LocationSearchResultsInterface" type="Magento\Framework\Api\SearchResults" />
+    <preference for="Internship\StoreLocator\Api\Data\LocationInterface" type="Internship\StoreLocator\Model\Location" />
+    <preference for="Internship\StoreLocator\Api\LocationRepositoryInterface" type="Internship\StoreLocator\Model\LocationRepository" />
+
+    <!--Listing-->
+    <virtualType name="LocationGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="LocationGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Internship\StoreLocator\Model\Resource\Location\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">LocationGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Internship\StoreLocator\Model\ResourceModel\Location\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">store_location</argument>
+            <argument name="resourceModel" xsi:type="string">Internship\StoreLocator\Model\ResourceModel\Location</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="location_listing_data_source" xsi:type="string">Internship\StoreLocator\Model\ResourceModel\Location\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!--Image Uploader-->
+    <virtualType name="Internship\StoreLocator\ReferenceImageUpload" type="Internship\StoreLocator\Model\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">storelocator/tmp/image</argument>
+            <argument name="basePath" xsi:type="string">storelocator/image</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Internship\StoreLocator\Controller\Adminhtml\Index\Upload">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Internship\StoreLocator\ReferenceImageUpload</argument>
+        </arguments>
+    </type>
+</config>

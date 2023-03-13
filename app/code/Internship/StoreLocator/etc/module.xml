@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Store Locator
+ * XML of module settings
+ *
+ * @category  Internship
+ * @package   Internship\StoreLocator
+ * @author    Andrii Tomkiv <tomkivandrii18@gmail.com>
+ * @copyright 2022 Elogic
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Internship_StoreLocator" />
+</config>

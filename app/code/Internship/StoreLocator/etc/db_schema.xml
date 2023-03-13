@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Store Locator
+ * XML of creation database
+ *
+ * @category  Internship
+ * @package   Internship\StoreLocator
+ * @author    Andrii Tomkiv <tomkivandrii18@gmail.com>
+ * @copyright 2022 Elogic
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="store_location" resource="default" engine="innodb" comment="Store Locator">
+        <column xsi:type="int" name="id" padding="6" unsigned="false" nullable="false" identity="true" comment="ID"/>
+        <column xsi:type="varchar" name="name" nullable="false" length="255" comment="Name"/>
+        <column xsi:type="varchar" name="description" nullable="false" length="1000" comment="Description"/>
+        <column xsi:type="varchar" name="open_time" nullable="false" length="15" comment="Opening Time"/>
+        <column xsi:type="varchar" name="close_time" nullable="false" length="15" comment="Closing Time"/>
+        <column xsi:type="varchar" name="latitude" nullable="false" length="50" comment="Latitude"/>
+        <column xsi:type="varchar" name="longitude" nullable="false" length="50" comment="Longitude"/>
+        <column xsi:type="varchar" name="image_path" nullable="false" length="255" comment="Image Path"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>
